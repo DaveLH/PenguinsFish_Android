@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1684401230093068}
+  m_IsPrefabParent: 1
+--- !u!1 &1684401230093068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4100197759040108}
+  - component: {fileID: 114165941518770784}
+  - component: {fileID: 114245356894322712}
+  - component: {fileID: 114546971505169374}
+  - component: {fileID: 114064157966760822}
+  - component: {fileID: 95278734443622822}
+  - component: {fileID: 114830629559900766}
+  - component: {fileID: 114517988234712364}
+  m_Layer: 0
+  m_Name: GameBoard
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4100197759040108
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95278734443622822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ffff23260de2ca43b51d5d5a7e3f53a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114064157966760822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7a1608fa99ba74e9969bc0c8562679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114165941518770784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937ada8fba2ec354e96a7b6e3c372bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilePrefabs:
+  - {fileID: 1957635445168660, guid: 27e5fbea984b25343af6d196b90cb00f, type: 2}
+  - {fileID: 1947084059136602, guid: 45b70d5f96fda1649bebe2b22400f5e6, type: 2}
+  - {fileID: 1644964713436790, guid: d293374158ace8e47981e20f30b22cb0, type: 2}
+  X_Padding: 1
+  Z_Padding: 0.9
+--- !u!114 &114245356894322712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d07b5af23248b14aae3d915c26a1d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workTiles: []
+--- !u!114 &114517988234712364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5730e218ed2d381468cb399e8017fd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114546971505169374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aaebbd782b0def40b8b2b8061bb4338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dimension: 8
+  StartingPoint: {x: 0, y: 0, z: 0}
+  scorePanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PenguinPrefabs:
+  - {fileID: 1311330900615100, guid: 36c5788ad5fcc234bbf08f49da4b2a20, type: 2}
+  - {fileID: 1597942894810086, guid: 09c35644c7a2fdc498cbc08cdfa5fd37, type: 2}
+  - {fileID: 1538435849590112, guid: dc0b0c7a6b16aed47ac0d6267772e056, type: 2}
+  - {fileID: 1395132195592486, guid: 9a63cc3b744b1424aa90285516323f09, type: 2}
+  PenguinAIPrefabs:
+  - {fileID: 1612568219461174, guid: 1736932252b093c4fb9ebfe60859808f, type: 2}
+  - {fileID: 1723002655132196, guid: 926b2d806b58a2e468ae24bae83b2eaa, type: 2}
+  - {fileID: 1358544263082858, guid: 2bc3fb4480b73e74e82343ad504a83ea, type: 2}
+  - {fileID: 1127201850097500, guid: 8fa0c27442f34f446b1de51848082a79, type: 2}
+  penguinDepartPrefab: {fileID: 198015409422949458, guid: 3e06db35892259d46829bc826e767ab7,
+    type: 2}
+  fishTakePrefab: {fileID: 198015409422949458, guid: 9482265ce4326354db0391cfb41a8dec,
+    type: 2}
+  penguinGoPrefab: {fileID: 0}
+  FishGrabMethod: FishGrab
+  BestNextMoveMethod: HeuristicNextMove
+  PathFindMethod: PathFind
+  MiniMaxMethod: MiniMax
+  scoreBlue: {fileID: 0}
+  scoreRed: {fileID: 0}
+  scoreGreen: {fileID: 0}
+  scoreGold: {fileID: 0}
+  turnText: {fileID: 0}
+  _AIProgressDialog: {fileID: 0}
+--- !u!114 &114830629559900766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684401230093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81111fbfd05efe4f968015c304bd577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _miniMaxThreshhold: 40
+  _difficultyLevel: 2
+  _debugMode: 1
+  _AIMethod: 3
