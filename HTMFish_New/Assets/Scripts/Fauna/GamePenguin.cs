@@ -10,6 +10,10 @@ public class GamePenguin : MonoBehaviour
     [HideInInspector] public bool IsMyTurn   { get; set; }
     [HideInInspector] public bool IsSelected { get; set; }
 
+    [SerializeField] protected Vector3 hotspotCenter = new Vector3(0f, 1f, 0f);
+    [SerializeField] protected float   hotspotRadius = 0.5f;
+    [SerializeField] protected float   hotspotHeight = 2.0f;
+
     [SerializeField] protected float moveSpeed = 1f;   // Default Time in sec. it takes to make a move from one tile to another
     [SerializeField] protected float moveSpMax = 3f;   // Max. Time in sec. it takes to make a move from one tile to another
     [SerializeField] protected float turnSpeed = 1f;   // Time in sec. it takes to make a turn at start of move
@@ -202,6 +206,21 @@ public class GamePenguin : MonoBehaviour
         // Set AI status
         //
         IsAI = bAI;
+
+        InitHotspot();
+    }
+
+
+    /// <summary>
+    /// Set Penguin's Hotspot (collider) to be a reasonable size so player can easily click on it
+    /// </summary>
+    protected void InitHotspot()
+    {
+        CapsuleCollider hotspot = GetComponent<CapsuleCollider>();
+
+        hotspot.center = hotspotCenter;
+        hotspot.radius = hotspotRadius;
+        hotspot.height = hotspotHeight;
     }
 
 
