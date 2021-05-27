@@ -53,8 +53,12 @@ public class State_Move_Human : State_Game
             {
                 s_refGM.MakePenguinCurrent(penguin);
 
-                penguin.OnSelect();   // Visually highlight the penguin
-            }
+                // Check if penguin is alone on an "island" of tiles and remove it if it is
+                //
+                bool bPenguinRemoved = s_refGM.TryRemovePenguin();
+
+                if(!bPenguinRemoved) penguin.OnSelect();   // If penguin not removed, visually highlight it and wait for player to move
+            } 
         }
     }
 

@@ -780,6 +780,9 @@ public partial class GameManager : MonoBehaviour
     /// Remove one of al players' penguins when it can claim a
     ///   whole "island" of tiles
     /// </summary>
+    /// <returns>
+    /// The total number of fish of the tiles to be added to the player's score
+    /// </returns>
     /// 
     public int RemovePenguin(Player player, GamePenguin penguin)
     {

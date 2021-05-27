@@ -198,12 +198,34 @@ public partial class GameManager : MonoBehaviour
         {
             // On "R" key, attempt to remove selected penguin (and tiles if penguin is alone on ice floe)
             //
-            int result = RemovePenguin(CurrentPlayer, CurrentPenguin);
+            bool bSuccess = TryRemovePenguin();  
 
             // If island can't be claimed, unselect this penguin, and wait for another move
             //
-            if (result < 0) UnselectPenguin();
+            if (!bSuccess) UnselectPenguin();
         } 
+    }
+
+
+    /// <summary>
+    /// Attempt to remove a penguin by checking if it's alone on an "island" and then letting it claim the remaining fish therein
+    /// </summary>
+    /// <remarks>
+    /// CALLED BY: ChkRKey() or State_Move_Human::OnPenguinClicked()  (Depending on whether target platform has a keyboard)
+    /// </remarks>
+    /// <returns>
+    /// TRUE if penguin (and its "island") could be removed, FALSE if penguin is not alone on "island"
+    /// </returns>
+    /// 
+    public bool TryRemovePenguin()
+    {
+        // Attempt to remove selected penguin (and tiles if penguin is alone on ice floe)
+        //
+        int result = RemovePenguin(CurrentPlayer, CurrentPenguin);
+
+        // If island can't be claimed, return false
+        //
+        return (result >= 0);
     }
 
 
