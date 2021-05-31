@@ -13,7 +13,9 @@ public partial class GameManager : MonoBehaviour
     //   (Set in dropdowns for each player on starting screen)
     //
     public enum PlayerStatus { Inactive = 0, Human = 1, Youngest = 2, AI = 3 };
-        
+
+    public enum Layers { None = 0, Penguins = 8, Tiles = 9 }
+
     static GameManager s_singleton;
 
     // Other Core objects we need to talk to
@@ -24,6 +26,8 @@ public partial class GameManager : MonoBehaviour
     GamePenguin m_currentPenguin = null;
 
     GameTile m_currentTile = null;
+
+    int m_currentLayerSelectMode;
 
     public int dimension;   // Dimensions of board will be dimension X dimension
 
@@ -105,6 +109,12 @@ public partial class GameManager : MonoBehaviour
 
 #region Properties
 
+    public int CurrentSelectMask
+    {
+        get { return m_currentLayerSelectMode; }
+    }
+
+
     public Transform CurrentTileTrnsfm
     {
         get
@@ -177,6 +187,16 @@ public partial class GameManager : MonoBehaviour
     public static GameManager GetGameManager()
     {
         return s_singleton;
+    }
+
+
+    // Set raycast mask depending on whether we want to select a penguin or a tile
+    //
+    public void SetSelectMask(Layers layer)
+    {
+        if (layer == Layers.None) m_currentLayerSelectMode = 0;
+        //
+        else m_currentLayerSelectMode = 1 << (int)layer;
     }
 
 

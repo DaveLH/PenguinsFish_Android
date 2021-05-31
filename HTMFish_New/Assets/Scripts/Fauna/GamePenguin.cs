@@ -224,12 +224,39 @@ public class GamePenguin : MonoBehaviour
     }
 
 
+
+    void OnMouseDown()
+    {
+        m_refGameMgr.OnPenguinSelected(this);
+    }
+
+
+    /// <summary>
+    /// Select this penguin 
+    /// </summary>
+    /// <remarks>
+    /// FLOW: InputProcesor::ProcessInput() => SendMessage(OnSelect) => (This method) => 
+    ///   GameMgr::OnPenguinSelected() => GameMgr::State_Play::OnClickPenguin() => Highlight()
+    /// </remarks>
+    /// 
+    public void OnSelect()
+    {
+        m_refGameMgr.OnPenguinSelected(this);
+
+        IsSelected = true;
+
+        Highlight(true);
+    }
+
+
     /// <summary>
     /// Highlight penguin when clicked
     /// </summary>
     /// 
     public void Highlight(bool highlight)
     {
+        IsSelected = highlight;
+
         if (highlight)  // Turn highlight on
         {
             currentColor = highlightColor;
@@ -241,27 +268,7 @@ public class GamePenguin : MonoBehaviour
     }
 
 
-    void OnMouseDown()
-    {
-        m_refGameMgr.OnPenguinSelected(this);
-    }
-
-
-    /// <summary>
-    /// Select this penguin after mouse click
-    /// </summary>
-    /// <remarks>
-    /// FLOW: OnMouseDown() => GameMgr::State_Play::OnClickPenguin() => OnSelect()
-    /// </remarks>
-    /// 
-    public void OnSelect()
-    {
-        IsSelected = true;
-
-        Highlight(true);
-    }
-
- 
+    
     /// <summary>
     /// Unselect this penguin when a tile or another penguin has been selected
     /// </summary>
@@ -269,13 +276,11 @@ public class GamePenguin : MonoBehaviour
     /// FLOW: <Tile>.OnMouseDown() => State_Selected::OnStateExit() => this.OnSelectOff()
     /// </remarks>
     /// 
-    public void OnSelectOff()
+    public void HighlightOff()
     {
-        IsSelected = false;
-
         Highlight(false);
     }
-
+    
 
     /// <summary>
     /// Set penguin's destination
@@ -317,7 +322,7 @@ public class GamePenguin : MonoBehaviour
             CurrentTile.RemovePenguin();
             destinationTile.PlacePenguin(this);
 
-            OnSelectOff();   // Turn off selection as we move
+            HighlightOff();   // Turn off selection as we move
 
             // Launch "Moving" State
             //

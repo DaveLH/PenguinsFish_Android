@@ -12,7 +12,7 @@ public class State_Move_Human : State_Game
     /// 
     public override void OnTileClicked(Animator animator, GameTile tile)
     {
-        if (s_refGM.CurrentPenguin != null)   // First check that a penguin has been selected to move
+        if (s_refGM.CurrentPenguin != null)   // First verify that a penguin has been selected to move
         {
             // Tell the penguin to move -- Handle winning fish -- Drop departed tile
             //
@@ -68,14 +68,14 @@ public class State_Move_Human : State_Game
     {
     
     }
-    */
+    
     // Check for a keypress -- Currently only "R" key is a valid command, and only if a penguin is selected
     //
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (s_refGM.CurrentPenguin) s_refGM.ChkRKey();
     }
-
+    */
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     //

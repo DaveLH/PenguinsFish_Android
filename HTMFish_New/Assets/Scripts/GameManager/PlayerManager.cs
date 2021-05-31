@@ -498,7 +498,7 @@ public partial class GameManager : MonoBehaviour
     /// 
     public void UnselectPenguin()
     {
-        if (CurrentPenguin) CurrentPenguin.OnSelectOff();
+        if (CurrentPenguin) CurrentPenguin.HighlightOff();
 
         CurrentPenguin = null;
     }
@@ -511,7 +511,7 @@ public partial class GameManager : MonoBehaviour
     /// 
     void ChangePenguin(GamePenguin newPenguin)
     {
-        if (m_currentPenguin) m_currentPenguin.OnSelectOff();  // Unselect currently selected
+        if (m_currentPenguin) m_currentPenguin.HighlightOff();  // Unselect currently selected
 
         m_currentPenguin = newPenguin;   // New selection
 

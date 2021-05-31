@@ -42,14 +42,6 @@ public class GameScene_Start : GameScene
     }
 
 
-    protected override void OnEscape()
-    {
-        Debug.Log("Quit Game...");
-
-        Application.Quit();   // Exit app
-    }
-
-
     /// <summary>
     /// Turn PLAY button on and off (enabled only if selected players is 2 or more, and there's at least one human player)
     /// </summary>
@@ -185,10 +177,10 @@ public class GameScene_Start : GameScene
     /// 
     void UpdateDropdowns()
     {
-        dropdnBlue.value  = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Blue];
-        dropdnRed.value   = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Red];
+         dropdnBlue.value = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Blue];
+          dropdnRed.value = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Red];
         dropdnGreen.value = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Green];
-        dropdnGold.value  = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Gold];
+         dropdnGold.value = (int)m_refSC.PlayersActiveStatus[GamePenguin.PenguinColor.Gold];
     }
 
 
@@ -208,10 +200,13 @@ public class GameScene_Start : GameScene
 
 
     /// <summary>
-    /// When user clicks "X" button
+    /// React to Player pressing "Quit" (Aborts application)
+    /// </summary>
     /// 
-    public void OnClickQuit()
+    public void OnQuitButton()
     {
-        OnEscape();
+        Debug.Log("Quit Game...");
+
+        Application.Quit();   // Exit app
     }
 }

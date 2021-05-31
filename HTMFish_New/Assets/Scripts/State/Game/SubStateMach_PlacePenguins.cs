@@ -14,6 +14,8 @@ public class SubStateMach_PlacePenguins : StateMachineBehaviour
     {
         m_refGM = GameManager.GetGameManager();
 
+        m_refGM.SetSelectMask(GameManager.Layers.Tiles);  // Initially only allow clicking on tiles while placing penguins
+
         m_refGM.InitPlayers();                         // Fetch player info from scene controller
         m_refGM.SendMessage("OnEnableOneFishTiles");   // TileManager enables tiles
         m_refGM.GoToStartingPlayer();                  // GameManager starts rotating players' turns  
@@ -35,6 +37,8 @@ public class SubStateMach_PlacePenguins : StateMachineBehaviour
         // Disable tile selection (must select penguin first)
         //
         m_refGM.SendMessage("OnDisableAllTiles");  // Method in TileManager
+        //
+        m_refGM.SetSelectMask(GameManager.Layers.None); 
 
         // TEMP: To Debug adding penguins to internal board
         //

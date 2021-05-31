@@ -1,0 +1,74 @@
+{
+    "name": "PenguinPointAndClick",
+    "maps": [
+        {
+            "name": "MainGamePlay",
+            "id": "e8220cb7-734d-4f35-8a9b-31488cbf4f88",
+            "actions": [
+                {
+                    "name": "SelectGameObject",
+                    "type": "Button",
+                    "id": "c4e0af8b-e35d-4e71-acdc-7ea9b2fb9c9e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ScreenPosition",
+                    "type": "Value",
+                    "id": "5a5b8181-a99b-4677-aebf-acd0084024d1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "67b6914f-7272-4b45-894f-85a5816b1b93",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectGameObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecbd8b6b-6346-4d63-ada0-e286ab28e838",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectGameObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80dbdfe9-0850-4968-9e58-6960dc3f6a5c",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c1cf7e5-4c6c-4c08-ad1c-3d1c4e2c4130",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

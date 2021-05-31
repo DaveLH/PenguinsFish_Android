@@ -206,7 +206,7 @@ public class GameTile : MonoBehaviour, ITileTraverse
 
 
     /// <summary>
-    /// Highlight tile when pointed at (IF it can be legally reached on this turn)
+    /// Highlight tile that can be validly selected on this turn
     /// </summary>
     /// 
     void Highlight(bool highlight)
@@ -229,6 +229,8 @@ public class GameTile : MonoBehaviour, ITileTraverse
     }
 
 
+    /*** Deprecated
+     * 
     // Mouse hovers over a selectable tile
     //
     void OnMouseEnter()
@@ -240,17 +242,6 @@ public class GameTile : MonoBehaviour, ITileTraverse
     }
 
 
-    // User clicks on a tile
-    //
-    void OnMouseDown()
-    {
-        if (!IsEmpty && CanSelect)
-        {
-            GameManager.GetGameManager().OnTileSelected(this);
-        }
-    }
-
-
     // Mouse leaves tile
     //
     void OnMouseExit()
@@ -258,6 +249,25 @@ public class GameTile : MonoBehaviour, ITileTraverse
         if (!IsEmpty)
         {
             Highlight(false);
+        }
+    }
+
+    */
+
+
+    /// <summary>
+    /// Select this tile 
+    /// </summary>
+    /// <remarks>
+    /// FLOW: InputProcesor::ProcessInput() => SendMessage(OnSelect) => (This method) => 
+    ///   GameMgr::OnTileSelected() => GameMgr::State_Play::OnTileClicked() 
+    /// </remarks>
+    ///  
+    public void OnSelect()
+    {
+        if (!IsEmpty && CanSelect)
+        {
+            GameManager.GetGameManager().OnTileSelected(this);
         }
     }
 

@@ -37,14 +37,17 @@ public abstract class GameScene : MonoBehaviour
 
     protected void Update ()
     {
+        /* (See comment below)
 		if(m_bSceneRunning)
         {
             UpdateScene();    // Do any updates
         }
         // Else ending...
+        */
 	}
 
-
+    /*** Deprecated methods (Used the old input system)
+     * 
     protected virtual void UpdateScene()
     {
         // Abort a game with <ESC>
@@ -54,8 +57,7 @@ public abstract class GameScene : MonoBehaviour
             OnEscape();
         }
     }
-
-
+    *
     /// <summary>
     /// What to do if Escape key is pressed
     /// </summary>
@@ -68,7 +70,7 @@ public abstract class GameScene : MonoBehaviour
         //
         m_refSC.ResetSC();
     }
-
+    */
 
     /// <summary>
     /// Call this to make scene do cleanup before being unloaded
